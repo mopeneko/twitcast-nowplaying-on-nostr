@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         TwitCast NowPlaying on Nostr
 // @namespace    http://tampermonkey.net/
-// @version      0.0.1
-// @description  Post TwitCast URL on load YouTube videos
+// @version      0.0.3
+// @description  Post TwitCast URL on load Twitcast videos
 // @author       https://github.com/mopeneko
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=tampermonkey.net
 // @grant        none
@@ -39,7 +39,7 @@
         kind: 1,
         created_at: Math.floor(Date.now() / 1000),
         tags: [],
-        content: `Now Playing: ${url}`,
+        content: `Now Playing: ${url}\n#TwitCastNowPlaying`,
     };
 
     const signedEvent = await window.nostr.signEvent(event);
